@@ -362,7 +362,8 @@ export const Admin = () => {
     const handleRecordTransaction = async () => {
         const productInfo = manageProducts.find(p => p.title === emailData.productName);
         const price = productInfo ? parseFloat(productInfo.price) : 0;
-        const netPrice = Math.max(0, price - 3500); // Deduct service fee
+        // const netPrice = Math.max(0, price - 3500); // REVERTED: Now using full price as per user request
+
 
         try {
             const { error } = await supabase
@@ -371,8 +372,9 @@ export const Admin = () => {
                     buyer_email: emailData.buyerEmail,
                     product_name: emailData.productName,
                     license_key: emailData.licenseKey,
-                    price: netPrice,
+                    price: price, // Modified: Display full price
                     created_at: new Date().toISOString()
+
                 }]);
 
             if (error) {

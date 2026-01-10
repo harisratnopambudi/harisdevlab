@@ -3,9 +3,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ShoppingBag } from 'lucide-react';
 import { Button } from './ui/Button';
 
+
 export const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const location = useLocation();
+
 
     const navLinks = [
         { name: 'Home', path: '/' },
@@ -43,6 +45,8 @@ export const Navbar = () => {
 
                     </div>
 
+
+
                     {/* Mobile Menu Button */}
                     <div className="md:hidden flex items-center">
                         <button
@@ -69,6 +73,9 @@ export const Navbar = () => {
                                 {link.name}
                             </Link>
                         ))}
+
+
+
 
                     </div>
                 </div>

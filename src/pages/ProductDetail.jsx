@@ -130,7 +130,7 @@ export const ProductDetail = () => {
 
     const handleOrder = () => {
         const message = `Halo Haris DevLab, saya ingin membeli produk "${activeProduct.title}" seharga ${price}. Mohon infonya.`;
-        const waUrl = `https://wa.me/6287784477751?text=${encodeURIComponent(message)}`;
+        const waUrl = `https://wa.me/6285155228041?text=${encodeURIComponent(message)}`;
         window.open(waUrl, '_blank');
     };
 

@@ -68,6 +68,7 @@ export const Admin = () => {
     const [isLoadingTransactions, setIsLoadingTransactions] = useState(false);
 
 
+
     const [email, setEmail] = useState('');
 
     useEffect(() => {
@@ -427,6 +428,9 @@ export const Admin = () => {
         navigator.clipboard.writeText(key);
         alert('License Key disalin: ' + key);
     };
+
+
+
 
 
 
@@ -935,11 +939,13 @@ export const Admin = () => {
                                                         <Button variant="outline" size="sm" onClick={() => handleCopyKey(tx.license_key)} title="Copy Key" className="px-3 py-1 gap-2">
                                                             <Copy size={16} /> <span className="text-xs">Copy</span>
                                                         </Button>
+
                                                         <Button variant="outline" size="sm" onClick={() => handleDeleteTransaction(tx.id)} title="Hapus Data" className="px-3 py-1 gap-2 text-red-600 border-red-200 hover:bg-red-50">
                                                             <Trash2 size={16} /> <span className="text-xs">Hapus</span>
                                                         </Button>
                                                     </div>
                                                 </td>
+
                                             </tr>
                                         ))
                                     )}
@@ -950,6 +956,7 @@ export const Admin = () => {
                 </div>
             ) : null
             }
+
         </div >
     );
 };
